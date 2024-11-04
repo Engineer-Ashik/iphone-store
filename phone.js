@@ -1,14 +1,24 @@
 //console.log("phone js connected");
-function phonefetch(){
-fetch("https://openapi.programming-hero.com/api/phones?search=iphone")
+function phonefetch(inputtext){
+fetch(`https://openapi.programming-hero.com/api/phones?search=${inputtext}`)
 .then(response => response.json())
 .then(data => phonedata(data))
 }
-
+  //button and input
+  document.getElementById('button-field').addEventListener('click', function calliT(){
+    const inputField = document.getElementById('input-field');
+    const inputValue = inputField.value ;
+    inputField.value = "";
+    console.log(inputValue);
+    phonefetch(inputValue);
+  });
+  
+  //main working function
 function phonedata(parameter){
     const phones = parameter.data;
     //console.log(phones);
     const phonecContainer = document.getElementById('post-container');
+    phonecContainer.textContent = '';
     phones.forEach(phone => {
       console.log(phone);
         const divCreate = document.createElement('div');
