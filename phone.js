@@ -21,7 +21,7 @@ function phonedata(parameter){
               <h2 class="card-title justify-center">${phone.phone_name}!</h2>
               <p>${phone.slug}..</p>
               <div class="card-actions justify-center">
-                <button class="btn btn-primary bg-red-700">Buy Now</button>
+                <button class="btn btn-primary bg-red-700 hover:bg-green-700">Buy Now</button>
               </div>
             </div>
         `
