@@ -16,6 +16,17 @@ fetch(`https://openapi.programming-hero.com/api/phones?search=${inputtext}`)
   //main working function
 function phonedata(parameter){
     const phones = parameter.data;
+    const showbutton = document.getElementById('show-button-container');
+
+    //Hidden Button
+    if(phones.length > 10){
+      console.log("the length is : " , phones.length);
+      showbutton.classList.remove('hidden');
+    }
+    else{
+      showbutton.classList.add('hidden');
+    }
+
     //console.log(phones);
     const phonecContainer = document.getElementById('post-container');
     phonecContainer.textContent = '';
@@ -40,4 +51,4 @@ function phonedata(parameter){
 }
 
 //callback
-phonefetch();
+//phonefetch();
