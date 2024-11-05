@@ -9,16 +9,16 @@ fetch(`https://openapi.programming-hero.com/api/phones?search=${inputtext}`)
     const inputField = document.getElementById('input-field');
     const inputValue = inputField.value ;
     inputField.value = "";
-    console.log(inputValue);
+    console.log("The User Input for searching.. is : ",inputValue);
     phonefetch(inputValue);
   });
   
   //main working function
 function phonedata(parameter){
-    const phones = parameter.data;
-    const showbutton = document.getElementById('show-button-container');
+    let phones = parameter.data;
 
     //Hidden Button
+    const showbutton = document.getElementById('show-button-container');
     if(phones.length > 10){
       console.log("the length is : " , phones.length);
       showbutton.classList.remove('hidden');
@@ -27,6 +27,8 @@ function phonedata(parameter){
       showbutton.classList.add('hidden');
     }
 
+    //output only 3 rows with 12 cards
+    phones = phones.slice(0,12);
     //console.log(phones);
     const phonecContainer = document.getElementById('post-container');
     phonecContainer.textContent = '';
