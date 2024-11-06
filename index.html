@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RKO iPhone Store</title>
+    <!--DaisyUi Link-->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <!--FontAwesome Link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <!--Tailwind Link-->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -22,8 +26,7 @@
 
             <input id="input-field" type="text" placeholder="Search here....." class="input input-bordered input-primary bg-slate-100 text-blue-900 font-semibold" />
             <button id="button-field" class="btn bg-purple-400 text-black font-medium">
-                <span class=""></span>
-                Searching
+                <i class="fa-solid fa-magnifying-glass"></i> Search
             </button>
             <!--<button onclick="fetching() class=" text-gray-200">JSON Fetch</button>
         <button onclick="photoss()">Photo LELE</button>
@@ -35,11 +38,19 @@
     <main>
         <h1>Here are the <span class="text-green-950 underline font-bold">PHONE</span> details you are searching for :
         </h1>
+
+        <!--Loading div-->
+        <div class="grid justify-center">
+            <span id="loading-container"  class="loading loading-spinner text-warning p-10 hidden"></span>
+        </div>
+
+        <!--Input div-->
         <div id="post-container" class="card bg-gray-200 shadow-xl grid-cols-1 lg:grid grid-cols-3 gap-4">
         </div>
+        
+        <!--ShowAll div-->
         <div>
-                        <!--ShowAll Button-->
-                        <button id="show-button-container" class="btn btn-active btn-secondary hover:bg-blue-600 hidden">Show All</button>
+               <button id="show-button-container" class="btn btn-active btn-secondary hover:bg-blue-600 hidden">Show All</button>
         </div>
     </main>
 
